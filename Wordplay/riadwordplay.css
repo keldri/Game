@@ -1,0 +1,351 @@
+#puzzle *{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+body.single-riadwordplay div#wrap{
+	padding-top:90px;
+}
+
+#puzzle div#rwpfeatured{
+	display:none;
+}
+
+/*hide answer from front page - removed() with jQuery too */
+body.blog article.riadpuzzle p{
+	/*display:none;*/
+}
+
+/* #Tablet (Portrait) = Design for a width of 720px
+================================================== */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	body.single-riadwordplay div#wrap{
+		padding-top:160px;
+   } 
+}
+
+/* Mobile (Portrait) = Design for a width of 280px
+================================================== */
+
+@media only screen and (max-width: 767px) {
+	body.single-riadwordplay div#wrap{
+		padding-top:180px;
+   }  
+  
+}
+
+
+/* Mobile (Landscape) = Design for a width of 440px
+================================================== */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	body.single-riadwordplay div#wrap{
+		padding-top:180px;
+	}
+	 		
+}
+#puzzle	div.instructions{
+	color:#44BDDC;	
+	padding-bottom:5px;
+}
+#puzzle	p ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+}
+#puzzle	p li{
+	display:inline-block;
+	border:4px solid #44BDDC;
+	text-align:center;
+	padding-bottom:5px;
+	padding:0;
+	margin:0;
+	width:49%;
+	float: left;
+	margin-bottom:2%;
+	position:relative;
+}
+#puzzle	p li div.puzzle-photo{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#puzzle	p a:nth-of-type(odd) li{
+	margin-right:1%;
+}
+#puzzle	p a:nth-of-type(even) li{
+	margin-left:1%;
+}
+#puzzle	p:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#puzzle	p li img{
+	width:auto;
+	height:auto;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#puzzle	p li div.label{
+	position:absolute;
+	left:0;
+	bottom:0;
+	margin-bottom:-4px;
+	background-color:#44BDDC;
+	color:white;
+	text-transform:uppercase;
+	font-size:12px;
+	text-height:10px;
+	width:100%;
+	height:auto;
+	z-index:3;
+	text-align:left;
+	padding-left:2px;
+}
+
+div#letters{
+	width:100%;
+	height:auto;
+	text-align:center;
+	display:absolute;
+}
+div#letters ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:auto;
+	display:block;
+	margin:20px auto !important;
+}
+div#letters ul:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+div#letters ul li{
+	display:inline-block;
+	background-color: #FFF;
+	height:40px;
+	width:40px;
+	margin-right:4px;
+	/*color:white;
+	text-transform:uppercase;
+	line-height:40px;
+	padding-right:4px;
+	font-size:24px;
+	font-weight:bold;*/
+	cursor:pointer;
+	border:4px solid #44BDDC;
+	position:relative;
+	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	-webkit-transform-perspective:1000;
+	-moz-transform-perspective:1000;
+	transform-perspective:1000;
+
+	transition: all 0.2s linear;
+}
+div#letters ul li >div{
+	background-color: #44BDDC;
+	color:#FFF;
+	/*height:36px;
+	width:36px;*/
+	height:100%;
+	width:100%;
+	
+	text-transform:uppercase;
+	line-height:32px;
+	/*padding-right:4px;*/
+	font-size:24px;
+	font-weight:bold;
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	left:0;	
+}
+div#letters ul li.flipped{
+	-webkit-transform: rotateY(90deg);
+	-moz-transform: rotateY(90deg);
+	transform: rotateY(90deg);
+}
+div#letters ul li{
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+div#letters ul li.wrong{
+	border:4px solid #60001B;
+}
+div#letters ul li.wrong >div{
+	background-color: #CA233D;	
+	color: #F87B3E;
+}
+div#letters ul li.right{
+	border:4px solid #44BDDC;
+}
+div#letters ul li.right >div{
+	background-color: #44BDDC;	
+}
+div#letters ul li.used{
+	/*background-color: #FFF;
+	//color:#44BDDC;*/
+}
+div#letters ul li#hint{
+	border:none;
+}
+div#letters ul li#hint >div{
+	background: #44BDDC url(hint.png) center center no-repeat !important;
+	/*margin:-2px 0 0 -2px;*/
+}
+div#letters ul li#hint div.hintcount{
+	background-color:#FFF;
+	border:2px solid #44BDDC;
+	position:absolute;
+	top:0;
+	right:0;
+	margin:-9px -9px 0 0;
+	color:black;
+	width: 20px;
+	height: 20px;
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	border-radius: 10px;
+	font-size:12px;
+	line-height:15px;
+}
+
+div#letters ul li:last-child{
+	margin-right:0;
+	
+}
+
+div#answer{
+	width:100%;
+	height:auto;
+	text-align:center;
+	display:absolute;
+}
+div#answer ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:auto;
+	display:block;
+	margin:20px auto !important;
+}
+div#answer ul:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/*div#answer ul li{
+	display:inline-block;
+	border-bottom:4px solid #44BDDC;
+	height:40px;
+	width:40px;
+	margin-right:4px;
+	text-transform:uppercase;
+	line-height:40px;
+	padding-right:4px;
+	font-size:24px;
+	font-weight:bold;
+	color:#FFF;
+}*/
+div#answer ul li{
+	display:inline-block;
+	background-color: #FFF;
+	height:40px;
+	width:40px;
+	margin-right:4px;
+	/*color:white;
+	text-transform:uppercase;
+	line-height:40px;
+	padding-right:4px;
+	font-size:24px;
+	font-weight:bold;*/
+	cursor:pointer;
+	border-bottom:4px solid #44BDDC;
+	position:relative;
+}
+div#answer ul li.solved{
+	border-bottom:4px solid #FFFFFF;
+}
+div#answer ul li >div{
+	background-color: #FFF;
+	color:#44BDDC;
+	height:28px;
+	width:36px;
+	
+	text-transform:uppercase;
+	line-height:24px;
+	padding-left:4px;
+	font-size:24px;
+	font-weight:bold;
+	cursor:pointer;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+div#answer ul li.filled{
+	color:#44BDDC;
+}
+div#answer ul li.filled{
+	cursor:pointer
+}
+div#answer ul li:last-child{
+	margin-right:0;
+	
+}
+
+/*  POPUP WINDOW */
+body#riadwordplay-popup{
+	text-align:center;
+	margin:0;
+	padding:0;
+	background: url(Riad-Represents-Logo.jpg) 40px 20px no-repeat;
+	background-size:15%;
+}
+body#riadwordplay-popup *{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+body#riadwordplay-popup{
+	color:#666;
+	font-size:10px;
+	font-family:'Helvetica Neue',Verdana, sans;	
+	text-transform:uppercase;
+}
+body#riadwordplay-popup img{
+	width:auto;
+	height:auto;
+	margin-top:12%;
+}
+
+body#riadwordplay-popup div.photog{
+	padding-top:5px;
+		
+}
+body#riadwordplay-popup div.photog a{
+	color:#666;
+	text-decoration:none;
+}
+body#riadwordplay-popup div.photog a{
+	color:#666;
+	text-decoration:none;
+}
+
+
+
+
